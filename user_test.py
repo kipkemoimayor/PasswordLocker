@@ -41,6 +41,21 @@ class UserTest(unittest.TestCase):
         found_account=User.find_by_accountName("Test");
         self.assertEqual(found_account.username,test_userDetails.username)
 
+    '''
+    method to check if account exist
+    '''
+    def test_account_exist(self):
+        self.user_details.register()
+        test_userDetails=User("Test","user","gmail.com")
+        test_userDetails.register()
+
+        account_exist=User.account_exist("Test")
+        self.assertTrue(account_exist)
+
+    #method to display all account password
+    def test_display_all_pass(self):
+        self.assertEqual(User.display_user(),User.user_details)
+
 
 
 
