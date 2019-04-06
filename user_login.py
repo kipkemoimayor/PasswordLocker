@@ -10,3 +10,11 @@ class User():
         self.email=email
     def register(self):
         User.user_details.append(self)
+    def delete_password(self):
+        User.user_details.remove(self)
+
+    @classmethod
+    def find_by_accountName(cls,number):
+        for user in cls.user_details:
+            if user.username==number:
+                return user
