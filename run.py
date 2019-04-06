@@ -12,6 +12,16 @@ Display contacts
 def display_passwords():
     return User.display_user();
 
+
+#Function to search password on specific Accounts
+
+def search_accountPassword(number):
+    return User.find_by_accountName(number);
+
+def check_if_accountExist(number):
+    return User.account_exist(number)
+
+
 def main():
         print("**********\n***********\n********")
         print("Welcome to password Locker Saves you password and hutsle of forgeting them")
@@ -32,7 +42,7 @@ def main():
         if vUser ==name and vPassword==password:
             print(f"Welcome to your dashboard {name}")
             while True:
-                print("These are short keys to help you navigate through\n cp- save new password dc-- display all passwords dc-- find a specific account password  dl-- delete password ex-- exit this application")
+                print("These are short keys to help you navigate through\n cp- save new password dc-- display all passwords fa-- find a specific account password  dl-- delete password ex-- exit this application")
                 short_codes=input().lower()
                 if short_codes=="cp":
                     print("-"*10)
@@ -51,17 +61,33 @@ def main():
                 elif short_codes=="dc":
                     if display_passwords():
                         print(f"{name} This are all your passwords keep em save")
-                        print("--"*20)
-                        print("\n")
+                        print("--"*40)
                         print("Account Name \t  Username\t password")
-                        print("_"*90)
+                        print("_"*60)
                         for account in display_passwords():
                             print(f"{account.username} \t {account.password}............{account.email}")
                             print("\n")
-                        print("--"*20)
+                        print("--"*40)
                     else:
                         print("\n")
                         print("It seems you have not Accounts yet")
+                elif short_codes=="fa":
+                    print("Enter Account name")
+                    search_pass=input();
+                    if check_if_accountExist(search_pass):
+                        searchP=search_accountPassword(search_pass)
+                        print("\n")
+                        print("Username\t password")
+                        print("__"*20)
+                        print(f"{searchP.password}...\t{searchP.email}")
+                        print("--"*20)
+                        print("\n")
+                    else:
+                        print("That Account does not exist Please Try again")
+                        print("--"*20)
+                        print("\n")
+
+
 
 
                 elif(short_codes == "ex"):
