@@ -17,18 +17,19 @@ NO known bugs as at the moment please reach to us if you see any.
 
 | __Behavior__  | __Input example__ | __Output example__ |
 | ------------- | ----------------- | ------------------ |
-| Displays web skeleton | HTML5   | content |
-| Display data using bootstrap  | h1    | class jumbotron |
-| Generate a new class | name,html-url | data |
-| Test if APiUrl will query some data | https://url.com/ | [name:kerr,login:dela] |
-| Create a search function on input search name | mayor | mayor calipso or user not found |
-| Create an array to stored all data   | users:[] | data objects array |
-| Create a function to search Repos| username | list of repos |
-| Display both repos and username on DoM | Collins | name:collins repos:[wala,locker,rest] |
+| The user should register their details  | application prompt the user for username   | username |
+| The application should give an option to either generate password or user to create their own  | create or generate  | password |
+| The application should save all input details | users and password | saved |
+| The application should prompt the user for their credetials to confirm their login | usermame|password | access granted |
+| the application should allow user to save multiple accounts | Instagram Facebook Sportpesa | account details |
+| The application should display all saved Account and passwords   | details | all available account details |
+| The application should allow user to delete any account name | Facebook | deleted |
+| The application should give the user the option to logout | logout | succefully |
+
 ## Technologies Used
 ## main languages used are
 * Python3.6
-* shengbang
+* Python shell
 ## Support and contact details
 get me at collinskipkemoi24@gmail.com
 ### License
