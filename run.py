@@ -126,14 +126,13 @@ def main():
                     delAccount=input();
                     if check_if_accountExist(delAccount):
                         for i in display_passwords():
-                            print(i.username)
                             if delAccount in i.username:
-                                print(display_passwords().index(i))
                                 posi=display_passwords().index(i)
                         # delete_account(posi)
                         display_passwords().remove(display_passwords()[posi])
 
-                        print("Account deleted succefully")
+                        print(f"{delAccount} Account deleted succefully")
+                        print("\n")
                     else:
                         print("Oh...an error occured That acount does not exist")
 
