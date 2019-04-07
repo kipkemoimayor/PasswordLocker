@@ -131,6 +131,7 @@ def main():
                                 print(display_passwords().index(i))
                                 posi=display_passwords().index(i)
                         # delete_account(posi)
+                        display_passwords().remove(display_passwords()[posi])
 
                         print("Account deleted succefully")
                     else:
