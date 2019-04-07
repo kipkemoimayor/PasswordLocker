@@ -65,7 +65,7 @@ def main():
         else:
             print("Enter your password")
             password=input()
-        thisAccout="pass"
+        thisAccout="passwordLocker"
         save_user(register(thisAccout,password,name))
         print("\n")
         print(f"Welcome {name}! Please Login ")
@@ -90,6 +90,7 @@ def main():
                     save_user(register(thisAccout,username,password))
                     print("\n")
                     print(f"{thisAccout} account details saved succefully")
+                    print("\n")
 
                 elif short_codes=="dc":
                     if display_passwords():
