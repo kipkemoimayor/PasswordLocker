@@ -12,9 +12,9 @@ def save_user(user_login):
 '''
 Function to delete Account info
 '''
-# def deletepassword(username,password,email):
-#     user_details=User(username,password,email)
-#     return user_details
+def deletepassword(username,password,email):
+    user_details=User(username,password,email)
+    return user_details
 
 
 def delete_account(user_login):
@@ -48,14 +48,20 @@ def random_password(limit):
     return hold
 
 def main():
-        print("**********\n***********\n********")
-        print("Welcome to password Locker Saves you password and hutsle of forgeting them")
+        print("**"*40)
+        print("❤❤"*40)
+        print("\n")
+        print("\t \t \t WELCOME TO PASSWORD LOCKER")
+        print("\n")
+        print("❤❤"*40)
+        print("**"*40)
+        print("Welcome to password Locker Saves you password and the hutsle of forgeting them, It also generates you password")
         print("Please Register\n Enter your userName")
         name=input()
         print("chose g-generate password or m- to make your own password ")
         short_codes=input().lower()
         if short_codes=="g":
-            print("Enter the length you would like you password to have recomendation:)5")
+            print("Enter the length that you would like your password to have. Recommended length:)5")
             limit=int(input())
             print('\n')
             print("**"*15)
@@ -74,6 +80,7 @@ def main():
         print("enter your password ")
         vPassword=input()
         if vUser ==name and vPassword==password:
+            print("\n")
             print(f"Welcome to your dashboard {name}")
             while True:
                 print("These are short keys to help you navigate through\n cp- save new password dc-- display all passwords fa-- find a specific account password  dl-- delete password ex-- exit this application")
@@ -131,6 +138,7 @@ def main():
                                 posi=display_passwords().index(i)
                         # delete_account(posi)
                         display_passwords().remove(display_passwords()[posi])
+                        print("\n")
 
                         print(f"{delAccount} Account deleted succefully")
                         print("\n")
