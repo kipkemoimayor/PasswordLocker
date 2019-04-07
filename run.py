@@ -58,7 +58,7 @@ def main():
         print("Welcome to password Locker Saves you password and the hutsle of forgeting them, It also generates you password")
         print("Please Register\n Enter your userName")
         name=input()
-        print("chose g-generate password or m- to make your own password ")
+        print("Use g-generate password or m- to make your own password or pess enter- to make your own password ")
         short_codes=input().lower()
         if short_codes=="g":
             print("Enter the length that you would like your password to have. Recommended length:)5")
