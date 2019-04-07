@@ -10,7 +10,7 @@ class User():
         self.email=email
     def register(self):
         User.user_details.append(self)
-    def delete_password(self):
+    def deletepassword(self):
         User.user_details.remove(self)
 
     @classmethod
@@ -28,3 +28,9 @@ class User():
     @classmethod
     def display_user(cls):
         return cls.user_details
+class Password():
+    def __init__(self,ranPassword):
+         self.ranPassword=ranPassword
+    def generatePassword():
+        password="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789)(*&^%$#@!)"
+        return password

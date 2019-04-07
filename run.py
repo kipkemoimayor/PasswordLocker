@@ -1,11 +1,23 @@
 #!/usr/bin/env python3.6
 from user_login import User
+import random
+from user_login import Password
 
 def register(username,password,accountName):
     user_details=User(username,password,accountName)
     return user_details
 def save_user(user_login):
     user_login.register()
+
+'''
+Function to delete Account info
+'''
+def deletepassword(username,password,accountName):
+    user_details=User(username,password,accountName)
+    return user_details
+def delete_account(user_login):
+    user_login.deletepassword()
+
 """
 Display contacts
 """
@@ -21,17 +33,37 @@ def search_accountPassword(number):
 def check_if_accountExist(number):
     return User.account_exist(number)
 
+'''
+This a function to generate random password
+'''
+def random_password(limit):
+    password="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789)(*&^%$#@!)"
+    ran=len(password)
+    hold=''
+    for i in range(0,limit):
+        all=password[random.randint(0,ran)]
+        hold=hold+all
+    return hold
 
 def main():
         print("**********\n***********\n********")
         print("Welcome to password Locker Saves you password and hutsle of forgeting them")
         print("Please Register\n Enter your userName")
         name=input()
-        print("Enter your password")
-        password=input()
-        print("Enter your Your email")
-        email=input()
-        thisAccout="PasswordLPlus"
+        print("chose g-generate password or m- to make your own password ")
+        short_codes=input().lower()
+        if short_codes=="g":
+            print("Enter the length you would like you password to have recomendation:)5")
+            limit=int(input())
+            print('\n')
+            print("**"*15)
+            password=random_password(limit)
+            print("Your password is "+password)
+            print("**"*15)
+        else:
+            print("Enter your password")
+            password=input()
+        thisAccout="pass"
         save_user(register(thisAccout,password,name))
         print("\n")
         print(f"Welcome {name}! Please Login ")
@@ -77,6 +109,7 @@ def main():
                     if check_if_accountExist(search_pass):
                         searchP=search_accountPassword(search_pass)
                         print("\n")
+                        print("Account Match ------1")
                         print("Username\t password")
                         print("__"*20)
                         print(f"{searchP.password}...\t{searchP.email}")
@@ -87,6 +120,18 @@ def main():
                         print("--"*20)
                         print("\n")
 
+                elif short_codes=="dl":
+                    print("Enter Account Name to be deleted")
+                    delAccount=input();
+                    if check_if_accountExist(delAccount):
+                        do=delete_account(deletepassword(delAccount,"",""))
+                        do.password,do.email,do.username
+                        print("Account deleted succefully")
+                    else:
+                        print("Oh...an error occured That acount does not exist")
+
+
+
 
 
 
@@ -96,7 +141,10 @@ def main():
                     if sure=="no":
                         continue
                     else:
+                        print("Existing...........\nBye!!!")
                         break
+                else:
+                    print("I didnt Get you would you mind using the short codes please")
         else:
             print("wrong usermame or password")
 if __name__ == '__main__':
