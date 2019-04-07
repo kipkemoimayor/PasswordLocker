@@ -4,6 +4,7 @@ class User():
         created an empty list to hold users info
     """
     user_details=[]; #empty
+
     def __init__(self, username,password,email):
         self.username=username
         self.password=password
@@ -11,7 +12,7 @@ class User():
     def register(self):
         User.user_details.append(self)
     def deletepassword(self):
-        User.user_details.remove(self)
+        User.user_details.pop(self)
 
     @classmethod
     def find_by_accountName(cls,number):
@@ -28,6 +29,7 @@ class User():
     @classmethod
     def display_user(cls):
         return cls.user_details
+    
 class Password():
     def __init__(self,ranPassword):
          self.ranPassword=ranPassword

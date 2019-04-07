@@ -89,7 +89,6 @@ def main():
                     print("\n")
                     print(f"{thisAccout} account details saved succefully")
 
-
                 elif short_codes=="dc":
                     if display_passwords():
                         print(f"{name} This are all your passwords keep em save")
