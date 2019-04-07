@@ -12,11 +12,13 @@ def save_user(user_login):
 '''
 Function to delete Account info
 '''
-def deletepassword(username,password,accountName):
-    user_details=User(username,password,accountName)
-    return user_details
+# def deletepassword(username,password,email):
+#     user_details=User(username,password,email)
+#     return user_details
+
+
 def delete_account(user_login):
-    user_login.deletepassword()
+    user_login.delete_password()
 
 """
 Display contacts
@@ -123,8 +125,13 @@ def main():
                     print("Enter Account Name to be deleted")
                     delAccount=input();
                     if check_if_accountExist(delAccount):
-                        do=delete_account(deletepassword(delAccount,"",""))
-                        do.password,do.email,do.username
+                        for i in display_passwords():
+                            print(i.username)
+                            if delAccount in i.username:
+                                print(display_passwords().index(i))
+                                posi=display_passwords().index(i)
+                        # delete_account(posi)
+
                         print("Account deleted succefully")
                     else:
                         print("Oh...an error occured That acount does not exist")

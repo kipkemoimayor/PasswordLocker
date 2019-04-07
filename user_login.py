@@ -11,8 +11,8 @@ class User():
         self.email=email
     def register(self):
         User.user_details.append(self)
-    def deletepassword(self):
-        User.user_details.pop(self)
+    def delete_password(self):
+        User.user_details.remove(self)
 
     @classmethod
     def find_by_accountName(cls,number):
@@ -29,7 +29,7 @@ class User():
     @classmethod
     def display_user(cls):
         return cls.user_details
-    
+
 class Password():
     def __init__(self,ranPassword):
          self.ranPassword=ranPassword
