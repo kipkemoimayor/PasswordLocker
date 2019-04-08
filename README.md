@@ -9,6 +9,7 @@ This application gives the user  to create new accounts and password associated 
 * Python3 or later is installed in your PC.
 * clone the directory into your local machine
 * navigate to the cloned folder by `cd GitHub_Search`
+* run this command on terminal `chmod +x run.py`
 * run `./run.py`
 * The application should work
 ## Known Bugs
